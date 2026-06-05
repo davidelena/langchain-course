@@ -9,6 +9,3 @@
 {"id":"event-000001","type":"session.start","ts":"2026-06-05T01:33:26Z","state":"initialized"}
 {"id":"event-000002","type":"tool.bash","ts":"2026-06-05T01:36:24Z","state":"initialized","data":{"command":"cat /Users/dailiwei/PycharmProjects/langchain-course/pyproject.toml"}}
 {"id":"event-000003","type":"session.stop","ts":"2026-06-05T01:36:36Z","state":"stopped"}
-{"id":"event-000004","type":"tool.edit","ts":"2026-06-05T01:45:24Z","state":"stopped","data":{"file_path":"/Users/dailiwei/PycharmProjects/langchain-course/main.py"}}
-{"id":"event-000005","type":"tool.edit","ts":"2026-06-05T01:45:37Z","state":"stopped","data":{"file_path":"/Users/dailiwei/PycharmProjects/langchain-course/main.py"}}
-{"id":"event-000006","type":"tool.bash","ts":"2026-06-05T01:46:30Z","state":"stopped","data":{"command":"find /Users/dailiwei/PycharmProjects/langchain-course -name "main.py""}}
