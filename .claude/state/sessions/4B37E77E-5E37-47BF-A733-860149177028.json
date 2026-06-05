@@ -1,0 +1,46 @@
+{
+  "session_id": "4B37E77E-5E37-47BF-A733-860149177028",
+  "parent_session_id": null,
+  "state": "stopped",
+  "state_version": 1,
+  "started_at": "2026-06-05T01:11:36Z",
+  "updated_at": "2026-06-05T01:12:34Z",
+  "resume_token": "F3E60A9D-ACD9-4FAB-99FA-5974D0CD8F33",
+  "event_seq": 7,
+  "last_event_id": "event-000007",
+  "fork_count": 0,
+  "orchestration": {
+    "max_state_retries": 3,
+    "retry_backoff_seconds": 10
+  },
+  "cwd": "/Users/dailiwei/PycharmProjects/langchain-course",
+  "project_name": "langchain-course",
+  "prompt_seq": 1,
+  "git": {
+    "branch": "project/hello-world",
+    "uncommitted_changes": 6,
+    "last_commit": "2ea5ad8"
+  },
+  "plans": {
+    "exists": false,
+    "last_modified": 0,
+    "wip_tasks": 0,
+    "todo_tasks": 0,
+    "pending_tasks": 0,
+    "completed_tasks": 0
+  },
+  "changes_this_session": [
+    {
+      "file": ".env",
+      "action": "Write",
+      "timestamp": "2026-06-05T01:12:25Z",
+      "important": false
+    }
+  ],
+  "intent": "literal",
+  "last_message_length": 375,
+  "last_message_hash": "1a6a8f57c9cfc8c2",
+  "ended_at": "2026-06-05T01:12:34Z",
+  "duration_minutes": 480,
+  "memory_logged": true
+}

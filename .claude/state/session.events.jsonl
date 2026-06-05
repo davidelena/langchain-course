@@ -1,0 +1,12 @@
+{"id":"event-000001","type":"session.start","ts":"2026-06-05T01:11:36Z","state":"initialized"}
+{"id":"event-000002","type":"tool.bash","ts":"2026-06-05T01:12:00Z","state":"initialized","data":{"command":"ls -la /Users/dailiwei/PycharmProjects/langchain-course/"}}
+{"id":"event-000003","type":"tool.bash","ts":"2026-06-05T01:12:03Z","state":"initialized","data":{"command":"grep -n "env\|OPENAI\|dotenv" /Users/dailiwei/PycharmProjects/langchain-course/main.py /Users/dailiwei/PycharmProjects/langchain-course/pyproject.toml /Users/dailiwei/PycharmProjects/langchain-course/"}}
+{"id":"event-000004","type":"tool.bash","ts":"2026-06-05T01:12:07Z","state":"initialized","data":{"command":"ls -la /Users/dailiwei/PycharmProjects/langchain-course/.env 2>/dev/null && echo "---FILE EXISTS---" || echo "---NO .env FILE---""}}
+{"id":"event-000005","type":"tool.write","ts":"2026-06-05T01:12:25Z","state":"initialized","data":{"file_path":"/Users/dailiwei/PycharmProjects/langchain-course/.env"}}
+{"id":"event-000006","type":"tool.bash","ts":"2026-06-05T01:12:31Z","state":"initialized","data":{"command":"git check-ignore -v .env"}}
+{"id":"event-000007","type":"session.stop","ts":"2026-06-05T01:12:34Z","state":"stopped"}
+{"type":"session.resume","ts":"2026-06-05T01:21:55Z","state":"initialized","data":{"cc_session_id":"5db3682e-142f-45f3-b0aa-1464279336fd","method":"mapping"}}
+{"id":"event-000001","type":"session.start","ts":"2026-06-05T01:21:54Z","state":"initialized"}
+{"id":"event-000002","type":"session.stop","ts":"2026-06-05T01:22:17Z","state":"stopped"}
+{"id":"event-000003","type":"tool.bash","ts":"2026-06-05T01:27:23Z","state":"stopped","data":{"command":"git -C /Users/dailiwei/PycharmProjects/langchain-course branch -a && echo "---" && git -C /Users/dailiwei/PycharmProjects/langchain-course remote -v"}}
+{"id":"event-000004","type":"tool.bash","ts":"2026-06-05T01:31:41Z","state":"stopped","data":{"command":"git -C /Users/dailiwei/PycharmProjects/langchain-course remote -v"}}
