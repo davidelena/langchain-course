@@ -10,7 +10,7 @@ load_dotenv()
 
 if __name__ == "__main__":
     print("Ingesting...")
-    loader = TextLoader("/Users/edenmarco/Desktop/langchain-course/mediumblog1.txt")
+    loader = TextLoader("/Users/dailiwei/Desktop/langchain-course/mediumblog.txt")
     document = loader.load()
 
     print("splitting...")
