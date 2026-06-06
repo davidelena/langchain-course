@@ -6,6 +6,8 @@ from langchain_core.messages import HumanMessage
 from langchain_core.output_parsers import StrOutputParser
 from langchain_core.prompts import ChatPromptTemplate
 from langchain_core.runnables import RunnablePassthrough
+from langchain_anthropic import ChatAnthropic
+from langchain_ollama import ChatOllama
 from langchain_openai import ChatOpenAI, OpenAIEmbeddings
 from langchain_pinecone import PineconeVectorStore
 
@@ -13,14 +15,15 @@ load_dotenv()
 
 print("Initializing components...")
 
-embeddings = OpenAIEmbeddings()
-llm = ChatOpenAI()
+embeddings = OpenAIEmbeddings(model="text-embedding-3-large", dimensions=3072)
+llm = ChatAnthropic(model="claude-sonnet-4-6")
+# llm = ChatOllama(model="qwen2.5")
 
 vectorstore = PineconeVectorStore(
     index_name=os.environ["INDEX_NAME"], embedding=embeddings
 )
-
-retriever = vectorstore.as_retriever(search_kwargs={"k": 3})
+！
+retriever = vectorstore.as_retriever(search_kwargs={"k": 15})
 
 prompt_template = ChatPromptTemplate.from_template(
     """Answer the question based only on the following context:
@@ -102,7 +105,16 @@ if __name__ == "__main__":
     print("Retrieving...")
 
     # Query
-    query = "what is Pinecone in machine learning?"
+    # query = "what is Pinecone in machine learning?"
+    # query = "谁是围城里面的男主角与女主角?"
+    query = "围城里苏文纨是谁？"
+
+    docs = retriever.invoke("方鸿渐")
+    for i, doc in enumerate(docs):
+        print(f"--- Doc {i + 1} ---")
+        print(doc.page_content[:200])
+        print(doc.metadata)
+        print()
 
     # ========================================================================
     # Option 0: Raw invocation without RAG
