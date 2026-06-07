@@ -15,14 +15,16 @@ load_dotenv()
 
 print("Initializing components...")
 
-embeddings = OpenAIEmbeddings(model="text-embedding-3-large", dimensions=3072)
-llm = ChatAnthropic(model="claude-sonnet-4-6")
+# embeddings = OpenAIEmbeddings(model="text-embedding-3-large", dimensions=3072)
+embeddings = OpenAIEmbeddings(model="text-embedding-3-small", dimensions=1536)
+# llm = ChatAnthropic(model="claude-sonnet-4-6")
 # llm = ChatOllama(model="qwen2.5")
+llm = ChatOpenAI()
 
 vectorstore = PineconeVectorStore(
     index_name=os.environ["INDEX_NAME"], embedding=embeddings
 )
-！
+
 retriever = vectorstore.as_retriever(search_kwargs={"k": 15})
 
 prompt_template = ChatPromptTemplate.from_template(
@@ -105,16 +107,16 @@ if __name__ == "__main__":
     print("Retrieving...")
 
     # Query
-    # query = "what is Pinecone in machine learning?"
+    query = "what is Pinecone in machine learning?"
     # query = "谁是围城里面的男主角与女主角?"
-    query = "围城里苏文纨是谁？"
+    # query = "围城里苏文纨是谁？"
 
-    docs = retriever.invoke("方鸿渐")
-    for i, doc in enumerate(docs):
-        print(f"--- Doc {i + 1} ---")
-        print(doc.page_content[:200])
-        print(doc.metadata)
-        print()
+    # docs = retriever.invoke("Pinecone")
+    # for i, doc in enumerate(docs):
+    #     print(f"--- Doc {i + 1} ---")
+    #     print(doc.page_content[:200])
+    #     print(doc.metadata)
+    #     print()
 
     # ========================================================================
     # Option 0: Raw invocation without RAG

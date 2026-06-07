@@ -11,8 +11,8 @@ load_dotenv()
 
 if __name__ == "__main__":
     print("Ingesting...")
-    # loader = TextLoader("/Users/dailiwei/Desktop/langchain-course/mediumblog.txt")
-    loader = PDFPlumberLoader("/Users/dailiwei/Desktop/langchain-course/weicheng.pdf")
+    loader = TextLoader("/Users/dailiwei/Desktop/langchain-course/mediumblog1.txt")
+    # loader = PDFPlumberLoader("/Users/dailiwei/Desktop/langchain-course/weicheng.pdf")
 
     document = loader.load()
 
@@ -21,9 +21,9 @@ if __name__ == "__main__":
     texts = text_splitter.split_documents(document)
     print(f"created {len(texts)} chunks")
 
-    # embeddings = OpenAIEmbeddings(model="text-embedding-3-small", dimensions=1024, openai_api_key=os.environ.get("OPENAI_API_KEY"))
-    embeddings = OpenAIEmbeddings(model="text-embedding-3-large", dimensions=3072,
-                                  openai_api_key=os.environ.get("OPENAI_API_KEY"))
+    embeddings = OpenAIEmbeddings(model="text-embedding-3-small", dimensions=1536, openai_api_key=os.environ.get("OPENAI_API_KEY"))
+    # embeddings = OpenAIEmbeddings(model="text-embedding-3-large", dimensions=3072,
+    #                               openai_api_key=os.environ.get("OPENAI_API_KEY"))
 
     print("ingesting...")
     batch_size = 100
